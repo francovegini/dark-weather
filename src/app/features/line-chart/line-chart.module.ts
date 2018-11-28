@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import {ChartModule} from 'angular-highcharts';
-import { LineChartComponent } from './line-chart.component';
+import {LineChartComponent} from './line-chart.component';
 
 @NgModule({
-declarations: [LineChartComponent],
-imports: [ChartModule],
-exports: [LineChartComponent]
+    declarations: [LineChartComponent],
+    imports: [ChartModule],
+    exports: [LineChartComponent]
 })
-export class LineChartModule { }
+export class LineChartModule {
+}

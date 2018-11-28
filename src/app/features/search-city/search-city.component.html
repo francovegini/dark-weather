@@ -1,70 +1,74 @@
 <div id="accordion">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          BUSCAR CIDADE
-        </button>
-      </h5>
-    </div>
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                        aria-controls="collapseOne">
+                    BUSCAR CIDADE
+                </button>
+            </h5>
+        </div>
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-      <div class="card-body">
-        <form [formGroup]="searchForm">
-          <div class="row">
-            <div class="col-sm-6">
-              <p class="lead">Estado:</p>
-              <select class="form-control" formControlName="state">
-                  <option disabled selected value>Selecione um estado</option>
-                  <option value="AC">Acre</option>
-                  <option value="AL">Alagoas</option>
-                  <option value="AP">Amapá</option>
-                  <option value="AM">Amazonas</option>
-                  <option value="BA">Bahia</option>
-                  <option value="CE">Ceará</option>
-                  <option value="DF">Distrito Federal</option>
-                  <option value="ES">Espírito Santo</option>
-                  <option value="GO">Goiás</option>
-                  <option value="MA">Maranhão</option>
-                  <option value="MT">Mato Grosso</option>
-                  <option value="MS">Mato Grosso do Sul</option>
-                  <option value="MG">Minas Gerais</option>
-                  <option value="PA">Pará</option>
-                  <option value="PB">Paraíba</option>
-                  <option value="PR">Paraná</option>
-                  <option value="PE">Pernambuco</option>
-                  <option value="PI">Piauí</option>
-                  <option value="RJ">Rio de Janeiro</option>
-                  <option value="RN">Rio Grande do Norte</option>
-                  <option value="RS">Rio Grande do Sul</option>
-                  <option value="RO">Rondônia</option>
-                  <option value="RR">Roraima</option>
-                  <option value="SC">Santa Catarina</option>
-                  <option value="SP">São Paulo</option>
-                  <option value="SE">Sergipe</option>
-                  <option value="TO">Tocantins</option>
-                </select>
-            </div>
-            <div class="col-sm-6">
-                <p class="lead">Cidade:</p>
-                <input type="text" class="form-control" formControlName="city" autocomplete="off" placeholder="Digite uma cidade">
-              </div>
-          </div>
-        </form>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                <form [formGroup]="searchForm">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p class="lead">Estado:</p>
+                            <select class="form-control" formControlName="state">
+                                <option disabled selected value>Selecione um estado</option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="lead">Cidade:</p>
+                            <input type="text" class="form-control" formControlName="city" autocomplete="off"
+                                   placeholder="Digite uma cidade">
+                        </div>
+                    </div>
+                </form>
 
-        <div class="row">
-          <div class="col-sm-12">
-            <button (click)="searchCity()" [disabled]="!searchForm.valid" class="btn btn-primary button-margin pull-right">
-              <i class="fa fa-search"></i> Buscar </button>
-              <span>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button (click)="searchCity()" [disabled]="!searchForm.valid"
+                                class="btn btn-primary button-margin pull-right">
+                            <i class="fa fa-search"></i> Buscar
+                        </button>
+                        <span>
                 <p class="lead" *ngFor="let result of resultsId">
                   Resultado: {{result.id}}
                 </p> 
               </span>
-          </div>
+                    </div>
 
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

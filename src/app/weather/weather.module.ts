@@ -1,23 +1,24 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 
-import { WeatherComponent } from './weather.component';
-import { ApiService } from '../api.service';
-import { SearchCityModule } from '../features/search-city/search-city.module';
-import { LineChartModule } from '../features/line-chart/line-chart.module';
+import {WeatherComponent} from './weather.component';
+import {ApiService} from '../api.service';
+import {SearchCityModule} from '../features/search-city/search-city.module';
+import {LineChartModule} from '../features/line-chart/line-chart.module';
 
 
 @NgModule({
-declarations: [
-    WeatherComponent
+    declarations: [
+        WeatherComponent
     ],
 
-imports: [
-    SearchCityModule,
-    LineChartModule
-],
+    imports: [
+        SearchCityModule,
+        LineChartModule
+    ],
 
-providers: [ApiService],
-exports: [WeatherComponent]
+    providers: [ApiService],
+    exports: [WeatherComponent]
 })
-export class WeatherModule { }
+export class WeatherModule {
+}
 

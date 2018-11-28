@@ -13,4 +13,4 @@ import { LineChartModule } from './line-chart/line-chart.module';
     ],
 
 })
-export class SharedModule { }
+export class FeaturesModule { }

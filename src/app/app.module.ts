@@ -6,8 +6,8 @@ import { WeatherModule } from './weather/weather.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { ApiService } from './api.service';
-import { NavbarModule } from './shared/navbar/navbar.module';
-import { SearchCityModule } from './shared/search-city/search-city.module';
+import { NavbarModule } from './features/navbar/navbar.module';
+import { SearchCityModule } from './features/search-city/search-city.module';
 
 @NgModule({
   declarations: [

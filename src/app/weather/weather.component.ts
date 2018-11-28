@@ -8,16 +8,16 @@ import {ApiService} from '../api.service';
 })
 export class WeatherComponent implements OnInit {
 
+    weathers: any[];
+    ids: any[];
+    currentWeather: any[];
+
     constructor(private apiService: ApiService) {
     }
 
     ngOnInit() {
         this.getWeatherNext15Days('5090');
     }
-
-    weathers: any[];
-    ids: any[];
-    currentWeather: any[];
 
     public getWeatherNext15Days(id: string) {
         this.apiService.getWeatherNext15Days(id)

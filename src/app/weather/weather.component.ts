@@ -21,17 +21,8 @@ export class WeatherComponent implements OnInit {
 
     public getWeatherNext15Days(id: string) {
         this.apiService.getWeatherNext15Days(id)
-            .subscribe((data: Array<object>) => {
+            .subscribe((data: any) => {
                 this.weathers = data;
-                console.log('API para buscar o clima dos próximos 15 dias' + data);
-            });
-    }
-
-    public getWeatherNext72Hours(id: string) {
-        this.apiService.getWeatherNext72Hours(id)
-            .subscribe((data: Array<object>) => {
-                this.weathers = data;
-                console.log('API para buscar o clima das próximas 72 horas' + data);
             });
     }
 

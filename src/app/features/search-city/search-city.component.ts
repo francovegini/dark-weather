@@ -9,7 +9,8 @@ import {ApiService} from '../../api.service';
 })
 export class SearchCityComponent implements OnInit {
 
-    searchForm: FormGroup;
+    public searchForm: FormGroup;
+    public resultsId: any[];
 
     constructor(private fb: FormBuilder,
                 private apiService: ApiService) {
@@ -22,8 +23,6 @@ export class SearchCityComponent implements OnInit {
         });
 
     }
-
-    resultsId: any[];
 
     searchCity() {
         this.getIdByNameOrState(this.searchForm.value.city, this.searchForm.value.state);

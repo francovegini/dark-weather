@@ -8,9 +8,9 @@ import {ApiService} from '../api.service';
 })
 export class WeatherComponent implements OnInit {
 
-    weathers: any[];
-    ids: any[];
-    currentWeather: any[];
+    public ids: any[];
+    public currentWeather: any[];
+    public temperatureList: number[] = [];
 
     constructor(private apiService: ApiService) {
     }
@@ -22,15 +22,26 @@ export class WeatherComponent implements OnInit {
     public getWeatherNext15Days(id: string) {
         this.apiService.getWeatherNext15Days(id)
             .subscribe((data: any) => {
-                this.weathers = data;
+                this.processInformation(data);
             });
+    }
+
+    private processInformation(data: any): void {
+        const informationDay = data.data;
+
+        informationDay.forEach((each: any) => {
+            const tempMin = each.temperature.min;
+            const tempMax = each.temperature.max;
+
+            const result = (tempMax + tempMin) / 2;
+            this.temperatureList.push(result);
+        });
     }
 
     public getIdByNameOrState(name?: string, state?: string) {
         this.apiService.getIdByNameOrState(name, state)
             .subscribe((data: Array<object>) => {
                 this.ids = data;
-                console.log('API para buscar o ID pelo nome ou estado' + data);
             });
     }
 
@@ -38,7 +49,6 @@ export class WeatherComponent implements OnInit {
         this.apiService.getCurrentWeather(id)
             .subscribe((data: Array<object>) => {
                 this.currentWeather = data;
-                console.log('API para buscar o clima atual' + data);
             });
     }
 

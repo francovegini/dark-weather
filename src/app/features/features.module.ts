@@ -9,8 +9,7 @@ import {LineChartModule} from './line-chart/line-chart.module';
         NavbarModule,
         SearchCityModule,
         LineChartModule
-    ],
-
+    ]
 })
 export class FeaturesModule {
 }

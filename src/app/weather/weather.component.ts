@@ -11,6 +11,7 @@ export class WeatherComponent implements OnInit {
     public ids: any[];
     public currentWeather: any[];
     public temperatureList: number[] = [];
+    public dateList: string[] = [];
 
     constructor(private apiService: ApiService) {
     }
@@ -35,6 +36,7 @@ export class WeatherComponent implements OnInit {
 
             const result = (tempMax + tempMin) / 2;
             this.temperatureList.push(result);
+            this.dateList.push(each.date_br);
         });
     }
 

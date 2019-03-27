@@ -60,13 +60,12 @@
                                 class="btn btn-primary button-margin pull-right">
                             <i class="fa fa-search"></i> Buscar
                         </button>
-                        <span>
-                <p class="lead">
-                  Resultado: {{result}}
-                </p> 
-              </span>
+                        <span *ngIf="result">
+                            <p class="lead">
+                              Resultado: {{result}}
+                            </p>
+                      </span>
                     </div>
-
                 </div>
             </div>
         </div>

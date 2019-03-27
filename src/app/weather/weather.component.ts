@@ -8,22 +8,20 @@ import {ApiService} from '../api.service';
 })
 export class WeatherComponent implements OnInit {
 
-    public ids: any[];
-    public currentWeather: any[];
+    public cityId: string;
     public temperatureList: number[] = [];
     public dateList: string[] = [];
 
     constructor(private apiService: ApiService) {
     }
 
-    ngOnInit() {
-        this.getWeatherNext15Days('5090');
-    }
+    ngOnInit() {}
 
-    public getWeatherNext15Days(id: string) {
+    private getWeatherNext15Days(id: string) {
         this.apiService.getWeatherNext15Days(id)
             .subscribe((data: any) => {
                 this.processInformation(data);
+                console.log('fez o request filho duma puta')
             });
     }
 
@@ -40,18 +38,8 @@ export class WeatherComponent implements OnInit {
         });
     }
 
-    public getIdByNameOrState(name?: string, state?: string) {
-        this.apiService.getIdByNameOrState(name, state)
-            .subscribe((data: Array<object>) => {
-                this.ids = data;
-            });
+    receiveEvent($event) {
+        this.cityId = $event;
+        this.getWeatherNext15Days(this.cityId);
     }
-
-    public getCurrentWeather(id: string) {
-        this.apiService.getCurrentWeather(id)
-            .subscribe((data: Array<object>) => {
-                this.currentWeather = data;
-            });
-    }
-
 }

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ApiService} from '../../api.service';
 
@@ -9,6 +9,8 @@ import {ApiService} from '../../api.service';
 })
 export class SearchCityComponent implements OnInit {
 
+    @Output() searchEvent = new EventEmitter<string>();
+
     public searchForm: FormGroup;
     public result: string;
 
@@ -16,23 +18,28 @@ export class SearchCityComponent implements OnInit {
                 private apiService: ApiService) {
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.searchForm = this.fb.group({
             state: this.fb.control('', [Validators.required]),
             city: this.fb.control('', [Validators.required, Validators.minLength(5)])
         });
-
     }
 
-    searchCity() {
+    private sendEvent(): void {
+        this.searchEvent.emit(this.result);
+    }
+
+
+    private searchCity(): void {
         this.getIdByNameOrState(this.searchForm.value.city, this.searchForm.value.state);
     }
 
-    getIdByNameOrState(name?: string, state?: string) {
+    private getIdByNameOrState(name?: string, state?: string) {
         this.apiService.getIdByNameOrState(name, state)
             .subscribe((data: any) => {
                 if (data.length === 1) {
                     this.result = data[0].id.toString();
+                    this.sendEvent();
                 } else {
                     this.result = 'Não foi encontrado um ID pra essa cidade.';
                 }

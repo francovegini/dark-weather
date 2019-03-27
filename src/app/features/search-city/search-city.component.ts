@@ -10,7 +10,7 @@ import {ApiService} from '../../api.service';
 export class SearchCityComponent implements OnInit {
 
     public searchForm: FormGroup;
-    public resultsId: any[];
+    public result: string;
 
     constructor(private fb: FormBuilder,
                 private apiService: ApiService) {
@@ -30,8 +30,12 @@ export class SearchCityComponent implements OnInit {
 
     getIdByNameOrState(name?: string, state?: string) {
         this.apiService.getIdByNameOrState(name, state)
-            .subscribe((data: Array<object>) => {
-                this.resultsId = data;
+            .subscribe((data: any) => {
+                if (data.length === 1) {
+                    this.result = data[0].id.toString();
+                } else {
+                    this.result = 'Não foi encontrado um ID pra essa cidade.';
+                }
             });
     }
 

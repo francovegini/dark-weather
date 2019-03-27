@@ -21,7 +21,6 @@ export class WeatherComponent implements OnInit {
         this.apiService.getWeatherNext15Days(id)
             .subscribe((data: any) => {
                 this.processInformation(data);
-                console.log('fez o request filho duma puta')
             });
     }
 

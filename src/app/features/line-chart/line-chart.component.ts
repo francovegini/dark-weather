@@ -13,7 +13,8 @@ export class LineChartComponent implements OnInit, AfterViewInit {
 
     chart = new Chart(<any>{
         xAxis: {
-            categories: [this.categories],
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             plotLines: [{ // summer months - treat from/to as numbers
                 color: '#FF0000',
                 width: 2,

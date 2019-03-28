@@ -37,13 +37,17 @@ export class SearchCityComponent implements OnInit {
     private getIdByNameOrState(name?: string, state?: string) {
         this.apiService.getIdByNameOrState(name, state)
             .subscribe((data: any) => {
-                if (data.length === 1) {
-                    this.result = data[0].id.toString();
-                    this.sendEvent();
-                } else {
-                    this.result = 'Não foi encontrado um ID pra essa cidade.';
-                }
+                this.checkReturn(data);
             });
+    }
+
+    private checkReturn(data: any): void {
+        if (data.length === 1) {
+            this.result = data[0].id.toString();
+            this.sendEvent();
+        } else {
+            this.result = 'Não foi encontrado um ID pra essa cidade.';
+        }
     }
 
 }

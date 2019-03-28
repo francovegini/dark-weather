@@ -15,7 +15,8 @@ export class WeatherComponent implements OnInit {
     constructor(private apiService: ApiService) {
     }
 
-    ngOnInit() {}
+    ngOnInit() {
+    }
 
     private getWeatherNext15Days(id: string) {
         this.apiService.getWeatherNext15Days(id)
@@ -35,6 +36,9 @@ export class WeatherComponent implements OnInit {
             this.temperatureList.push(result);
             this.dateList.push(each.date_br);
         });
+
+        console.log(this.temperatureList);
+        console.log(this.dateList);
     }
 
     receiveEvent($event) {

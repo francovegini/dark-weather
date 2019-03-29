@@ -11,6 +11,7 @@ export class WeatherComponent implements OnInit {
     public cityId: string;
     public temperatureList: number[] = [];
     public dateList: string[] = [];
+    public isVisible: boolean;
 
     constructor(private apiService: ApiService) {
     }
@@ -36,12 +37,14 @@ export class WeatherComponent implements OnInit {
             this.temperatureList.push(result);
             this.dateList.push(each.date_br);
         });
+        debugger;
 
+        this.isVisible = true;
         console.log(this.temperatureList);
         console.log(this.dateList);
     }
 
-    receiveEvent($event) {
+    public receiveEvent($event) {
         this.cityId = $event;
         this.getWeatherNext15Days(this.cityId);
     }

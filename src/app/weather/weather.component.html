@@ -4,7 +4,7 @@
             <app-search-city (searchEvent)="receiveEvent($event)"></app-search-city>
         </div>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="isVisible">
         <div class="col-sm-12">
             <div class="grid">
                 <div class="card">

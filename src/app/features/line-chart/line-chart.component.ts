@@ -14,7 +14,7 @@ export class LineChartComponent implements OnInit, AfterViewInit {
     chart = new Chart(<any>{
         xAxis: {
             categories: [this.categories],
-            plotLines: [{ // summer months - treat from/to as numbers
+            plotLines: [{
                 color: '#FF0000',
                 width: 2,
                 value: 5.5,
@@ -22,7 +22,7 @@ export class LineChartComponent implements OnInit, AfterViewInit {
             }],
         },
         yAxis: {
-            plotLines: [{ // summer months - treat from/to as numbers
+            plotLines: [{
                 color: 'green',
                 width: 2,
                 value: 155,

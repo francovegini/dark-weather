@@ -34,10 +34,6 @@ export class WeatherComponent implements OnInit {
             const tempMin = each.temperature.min;
             const tempMax = each.temperature.max;
 
-            // Teste
-            const teste = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-            console.log(teste);
-
             const result = (tempMax + tempMin) / 2;
             this.temperatureList.push(result);
             this.dateList.push(each.date_br);

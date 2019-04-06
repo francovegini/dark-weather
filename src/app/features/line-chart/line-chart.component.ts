@@ -13,7 +13,7 @@ export class LineChartComponent implements OnInit, AfterViewInit {
 
     chart = new Chart(<any>{
         xAxis: {
-            categories: [this.categories],
+            categories: this.categories,
             plotLines: [{
                 color: '#FF0000',
                 width: 2,
@@ -39,7 +39,7 @@ export class LineChartComponent implements OnInit, AfterViewInit {
         },
 
         series: [{
-            data: [this.data]
+            data: this.data
         }],
 
         annotations: [{

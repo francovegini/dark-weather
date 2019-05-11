@@ -28,7 +28,6 @@ export class WeatherComponent implements OnInit {
 
     private processInformation(data: any): void {
         const informationDay = data.data;
-        this.isVisible = true;
 
         informationDay.forEach((each: any) => {
             const tempMin = each.temperature.min;
@@ -38,6 +37,7 @@ export class WeatherComponent implements OnInit {
             this.temperatureList.push(result);
             this.dateList.push(each.date_br);
         });
+        this.isVisible = true;
     }
 
     public receiveEvent($event) {

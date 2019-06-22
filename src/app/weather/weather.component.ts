@@ -11,7 +11,7 @@ export class WeatherComponent implements OnInit {
     public cityId: string;
     public temperatureList: number[] = [];
     public dateList: string[] = [];
-    public isVisible: boolean;
+    public isVisible = false;
 
     constructor(private apiService: ApiService) {
     }

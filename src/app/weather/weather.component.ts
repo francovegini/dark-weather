@@ -39,6 +39,8 @@ export class WeatherComponent {
             this.temperatureList.push(result);
             this.dateList.push(each.date_br);
         });
+        console.log(this.temperatureList);
+        console.log(this.dateList);
         this.isVisible = true;
     }
 }

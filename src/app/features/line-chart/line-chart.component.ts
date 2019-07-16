@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'angular-highcharts';
 
 @Component({
@@ -6,7 +6,7 @@ import { Chart } from 'angular-highcharts';
     templateUrl: './line-chart.component.html',
     styleUrls: ['./line-chart.component.css']
 })
-export class LineChartComponent implements OnInit, AfterViewInit {
+export class LineChartComponent {
 
     @Input() categories: any[];
     @Input() data: any[];
@@ -55,14 +55,5 @@ export class LineChartComponent implements OnInit, AfterViewInit {
     });
 
     constructor() {
-
     }
-
-    ngOnInit() {
-    }
-
-    ngAfterViewInit() {
-    }
-
-
 }

@@ -1,12 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {ApiService} from '../api.service';
+import { Component } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
     selector: 'app-weather',
     templateUrl: './weather.component.html',
     styleUrls: ['./weather.component.css']
 })
-export class WeatherComponent implements OnInit {
+export class WeatherComponent {
 
     public cityId: string;
     public temperatureList: number[] = [];
@@ -16,7 +16,9 @@ export class WeatherComponent implements OnInit {
     constructor(private apiService: ApiService) {
     }
 
-    ngOnInit() {
+    public receiveEvent($event) {
+        this.cityId = $event;
+        this.getWeatherNext15Days(this.cityId);
     }
 
     private getWeatherNext15Days(id: string) {
@@ -38,10 +40,5 @@ export class WeatherComponent implements OnInit {
             this.dateList.push(each.date_br);
         });
         this.isVisible = true;
-    }
-
-    public receiveEvent($event) {
-        this.cityId = $event;
-        this.getWeatherNext15Days(this.cityId);
     }
 }

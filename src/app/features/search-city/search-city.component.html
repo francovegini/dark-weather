@@ -2,14 +2,14 @@
     <div class="card">
         <div class="card-header" id="headingOne">
             <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                        aria-controls="collapseOne">
+                <button aria-controls="collapseOne" aria-expanded="true" class="btn btn-link" data-target="#collapseOne"
+                        data-toggle="collapse">
                     BUSCAR CIDADE
                 </button>
             </h5>
         </div>
 
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div aria-labelledby="headingOne" class="collapse show" data-parent="#accordion" id="collapseOne">
             <div class="card-body">
                 <form [formGroup]="searchForm">
                     <div class="row">
@@ -48,8 +48,8 @@
                         </div>
                         <div class="col-sm-6">
                             <p class="lead">Cidade:</p>
-                            <input type="text" class="form-control" formControlName="city" autocomplete="off"
-                                   placeholder="Digite uma cidade">
+                            <input autocomplete="off" class="form-control" formControlName="city" placeholder="Digite uma cidade"
+                                   type="text">
                         </div>
                     </div>
                 </form>

@@ -1,5 +1,5 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
-import {Chart} from 'angular-highcharts';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { Chart } from 'angular-highcharts';
 
 @Component({
     selector: 'app-line-chart',

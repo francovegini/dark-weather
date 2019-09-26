@@ -3,8 +3,7 @@ import { Chart } from 'angular-highcharts';
 
 @Component({
     selector: 'app-line-chart',
-    templateUrl: './line-chart.component.html',
-    styleUrls: ['./line-chart.component.css']
+    templateUrl: './line-chart.component.html'
 })
 export class LineChartComponent {
 

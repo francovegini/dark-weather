@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-
 import { NavbarComponent } from './navbar.component';
 
 
@@ -7,7 +6,6 @@ import { NavbarComponent } from './navbar.component';
     declarations: [
         NavbarComponent
     ],
-
     exports: [NavbarComponent]
 })
 export class NavbarModule {

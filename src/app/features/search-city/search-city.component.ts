@@ -29,12 +29,11 @@ export class SearchCityComponent implements OnInit {
         this.searchEvent.emit(this.result);
     }
 
-
     private searchCity(): void {
         this.getIdByNameOrState(this.searchForm.value.city, this.searchForm.value.state);
     }
 
-    private getIdByNameOrState(name?: string, state?: string) {
+    private getIdByNameOrState(name: string, state: string) {
         this.apiService.getIdByNameOrState(name, state)
             .subscribe((data: any) => {
                 this.checkReturn(data);
@@ -46,7 +45,7 @@ export class SearchCityComponent implements OnInit {
             this.result = data[0].id.toString();
             this.sendEvent();
         } else {
-            this.result = 'Não foi encontrado um ID pra essa cidade.';
+            this.result = 'Nenhuma cidade encontrada!';
         }
     }
 

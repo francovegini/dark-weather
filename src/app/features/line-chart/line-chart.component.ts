@@ -16,6 +16,11 @@ export class LineChartComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        console.log('Startou line-chart.component')
+        this.updateData();
+    }
+
+    private updateData(): void {
         if (this.categories && this.data) {
             this.chart = new Chart(<any>{
                 xAxis: {

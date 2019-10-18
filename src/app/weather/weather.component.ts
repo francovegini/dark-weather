@@ -8,7 +8,7 @@ import { ApiService } from '../api.service';
 })
 export class WeatherComponent {
 
-    public cityId: string;
+    private cityId: string;
     public temperatureList: number[] = [];
     public dateList: string[] = [];
     public isVisible = false;

@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
-    API_URL = 'http://apiadvisor.climatempo.com.br';
-    TOKEN = '8ec2d199f092eb2f194d3451204146be';
+    private API_URL = 'http://apiadvisor.climatempo.com.br';
+    private TOKEN = '8ec2d199f092eb2f194d3451204146be';
 
     constructor(private httpClient: HttpClient) {
     }

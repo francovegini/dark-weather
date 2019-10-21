@@ -21,14 +21,6 @@ export class ApiService {
     }
 
     /**
-     * Obtem a previsão das próximas 72 horas de uma determinada cidade a partir do seu respectivo ID.
-     * @param id - ID da cidade
-     */
-    public getWeatherNext72Hours(id: string) {
-        return this.httpClient.get(`${this.API_URL}forecast/locale/${id}/hours/72?token=${this.TOKEN}`);
-    }
-
-    /**
      * Obtem o ID de uma ou mais cidade a partir do nome e/ou estado.
      * @param name (opcional) - Nome da cidade
      * @param state (opcional) - Estado

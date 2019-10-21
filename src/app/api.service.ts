@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
-    private API_URL = 'http://apiadvisor.climatempo.com.br';
+    private API_URL = 'http://apiadvisor.climatempo.com.br/api/v1/';
     private TOKEN = '8ec2d199f092eb2f194d3451204146be';
 
     constructor(private httpClient: HttpClient) {
@@ -16,16 +16,16 @@ export class ApiService {
      * Obtem a previsão dos próximos 15 dias de uma determinada cidade a partir do seu respectivo ID.
      * @param id - ID da cidade
      */
-    getWeatherNext15Days(id: string) {
-        return this.httpClient.get(`${this.API_URL}/api/v1/forecast/locale/${id}/days/15?token=${this.TOKEN}`);
+    public getWeatherNext15Days(id: string) {
+        return this.httpClient.get(`${this.API_URL}forecast/locale/${id}/days/15?token=${this.TOKEN}`);
     }
 
     /**
      * Obtem a previsão das próximas 72 horas de uma determinada cidade a partir do seu respectivo ID.
      * @param id - ID da cidade
      */
-    getWeatherNext72Hours(id: string) {
-        return this.httpClient.get(`${this.API_URL}/api/v1/forecast/locale/${id}/hours/72?token=${this.TOKEN}`);
+    public getWeatherNext72Hours(id: string) {
+        return this.httpClient.get(`${this.API_URL}forecast/locale/${id}/hours/72?token=${this.TOKEN}`);
     }
 
     /**
@@ -33,22 +33,13 @@ export class ApiService {
      * @param name (opcional) - Nome da cidade
      * @param state (opcional) - Estado
      */
-    getIdByNameOrState(name?: string, state?: string) {
+    public getIdByNameOrState(name?: string, state?: string) {
         if ((name !== '' || name) && (state !== '' || state)) {
-            return this.httpClient.get(`${this.API_URL}/api/v1/locale/city?name=${name}&state=${state}&token=${this.TOKEN}`);
+            return this.httpClient.get(`${this.API_URL}locale/city?name=${name}&state=${state}&token=${this.TOKEN}`);
         } else if ((name !== '' || name) && (!state || state === '')) {
-            return this.httpClient.get(`${this.API_URL}/api/v1/locale/city?name=${name}&token=${this.TOKEN}`);
+            return this.httpClient.get(`${this.API_URL}locale/city?name=${name}&token=${this.TOKEN}`);
         } else if ((!name || name === '') && (state !== '' || state)) {
-            return this.httpClient.get(`${this.API_URL}/api/v1/locale/city?state=${state}&token=${this.TOKEN}`);
+            return this.httpClient.get(`${this.API_URL}locale/city?state=${state}&token=${this.TOKEN}`);
         }
     }
-
-    /**
-     * Obtem o tempo atual de determinada cidade pelo seu respectivo ID.
-     * @param id - ID da cidade
-     */
-    getCurrentWeather(id: string) {
-        return this.httpClient.get(`${this.API_URL}/api/v1/weather/locale/${id}/current?token=${this.TOKEN}`);
-    }
-
 }

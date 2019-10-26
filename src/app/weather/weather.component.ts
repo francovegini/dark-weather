@@ -31,7 +31,7 @@ export class WeatherComponent {
     private processInformation(data: any): void {
         const informationDay = data.data;
 
-        // Define as listas como vazias para evitar que tenha dados de outra cidade.
+        // Zera as listas para evitar que tenha dados de outra cidade.
         this.temperatureList = [];
         this.dateList = [];
 

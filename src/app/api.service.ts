@@ -14,7 +14,7 @@ export class ApiService {
 
     /**
      * Obtem a previsão dos próximos 15 dias de uma determinada cidade a partir do seu respectivo ID.
-     * @param id - ID da cidade
+     * @param id ID da cidade
      */
     public getWeatherNext15Days(id: string) {
         return this.httpClient.get(`${this.API_URL}forecast/locale/${id}/days/15?token=${this.TOKEN}`);
@@ -22,8 +22,8 @@ export class ApiService {
 
     /**
      * Obtem o ID de uma ou mais cidade a partir do nome e/ou estado.
-     * @param name (opcional) - Nome da cidade
-     * @param state (opcional) - Estado
+     * @param name Nome da cidade
+     * @param state Estado
      */
     public getIdByNameOrState(name?: string, state?: string) {
         if ((name !== '' || name) && (state !== '' || state)) {

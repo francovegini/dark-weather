@@ -16,7 +16,6 @@ export class LineChartComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log('Startou line-chart.component');
         this.updateData();
     }
 

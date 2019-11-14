@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Chart } from 'angular-highcharts';
 
 @Component({
     selector: 'app-line-chart',
     templateUrl: './line-chart.component.html'
 })
-export class LineChartComponent implements OnInit {
+export class LineChartComponent implements OnInit, OnChanges {
 
     @Input() categories: any[];
     @Input() data: any[];
@@ -16,6 +16,10 @@ export class LineChartComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.updateData();
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
         this.updateData();
     }
 

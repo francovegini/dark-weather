@@ -8,16 +8,12 @@ import { CommonModule } from '@angular/common';
 
 
 @NgModule({
-    declarations: [
-        WeatherComponent
-    ],
-
+    declarations: [WeatherComponent],
     imports: [
         SearchCityModule,
         LineChartModule,
         CommonModule
     ],
-
     providers: [ApiService],
     exports: [WeatherComponent]
 })

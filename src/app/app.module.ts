@@ -9,9 +9,7 @@ import { NavbarModule } from './features/navbar/navbar.module';
 import { SearchCityModule } from './features/search-city/search-city.module';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-    ],
+    declarations: [AppComponent],
     imports: [
         BrowserModule,
         WeatherModule,

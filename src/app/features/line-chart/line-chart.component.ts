@@ -27,13 +27,7 @@ export class LineChartComponent implements OnInit, OnChanges {
         if (this.categories && this.data) {
             this.chart = new Chart(<any>{
                 xAxis: {
-                    categories: this.categories,
-                    plotLines: [{
-                        color: '#FF0000',
-                        width: 2,
-                        value: 5.5,
-                        id: 'plotline-1'
-                    }],
+                    categories: this.categories
                 },
                 yAxis: {
                     plotLines: [{
@@ -43,28 +37,28 @@ export class LineChartComponent implements OnInit, OnChanges {
                         dashStyle: 'shortdash',
                     }],
                 },
-
                 title: {
                     text: 'Temperatura da semana'
                 },
-
                 credits: {
                     enabled: false
                 },
-
                 series: [{
                     data: this.data
                 }],
-
                 annotations: [{
-                    labels: [{
-                        point: 'max',
-                        text: 'Max'
-                    }, {
-                        point: 'min',
-                        text: 'Min',
-                        backgroundColor: 'white'
-                    }]
+                    labels:
+                        [
+                            {
+                                point: 'max',
+                                text: 'Max'
+                            },
+                            {
+                                point: 'min',
+                                text: 'Min',
+                                backgroundColor: 'white'
+                            }
+                        ]
                 }]
             });
         }

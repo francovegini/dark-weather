@@ -1,3 +1,5 @@
 # Dark weather
 
-Aplicação em angular
+Aplicação desenvolvida para consulta do clima em tempo real.
+
+

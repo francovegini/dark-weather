@@ -1,6 +1,6 @@
 # Dark weather
 
-Aplicação desenvolvida para consulta do clima em tempo real.
+Aplicação para consulta do clima em tempo real.
 
 
 ## Demo

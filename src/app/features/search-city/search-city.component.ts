@@ -25,6 +25,10 @@ export class SearchCityComponent implements OnInit {
         });
     }
 
+    public changedState() {
+        this.searchForm.get('city').setValue(undefined);
+    }
+
     private sendEvent(): void {
         this.searchEvent.emit(this.result);
     }

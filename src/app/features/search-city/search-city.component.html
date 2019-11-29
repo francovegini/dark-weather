@@ -14,7 +14,9 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <p class="lead">Estado:</p>
-                            <select class="form-control" formControlName="state">
+                            <select class="form-control"
+                                    formControlName="state"
+                                    (change)="changedState()">
                                 <option disabled selected value>Selecione um estado</option>
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>

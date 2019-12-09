@@ -15,7 +15,7 @@ export class WeatherComponent {
     constructor(private apiService: ApiService) {
     }
 
-    public receiveEvent($event) {
+    public receiveEvent($event): void {
         if ($event) {
             this.getWeatherNext15Days($event);
         }

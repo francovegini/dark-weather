@@ -18,6 +18,8 @@ export class WeatherComponent {
     public receiveEvent($event): void {
         if ($event) {
             this.getWeatherNext15Days($event);
+        } else {
+            this.isVisible = false;
         }
     }
 

@@ -29,8 +29,8 @@ export class SearchCityComponent implements OnInit {
         this.searchForm.get('city').setValue(undefined);
     }
 
-    private sendEvent(): void {
-        this.searchEvent.emit(this.result);
+    private sendEvent(value): void {
+        this.searchEvent.emit(value);
     }
 
     private searchCity(): void {
@@ -47,9 +47,9 @@ export class SearchCityComponent implements OnInit {
     private checkReturn(data: any): void {
         if (data.length === 1) {
             this.result = data[0].id.toString();
-            this.sendEvent();
+            this.sendEvent(this.result);
         } else {
-            this.result = 'Nenhuma cidade encontrada!';
+            this.sendEvent(null);
         }
     }
 

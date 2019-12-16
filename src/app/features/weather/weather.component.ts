@@ -16,11 +16,7 @@ export class WeatherComponent {
     }
 
     public receiveEvent($event): void {
-        if ($event) {
-            this.getWeatherNext15Days($event);
-        } else {
-            this.isVisible = false;
-        }
+        $event ? this.getWeatherNext15Days($event) : this.isVisible = false;
     }
 
     private getWeatherNext15Days(id: string) {

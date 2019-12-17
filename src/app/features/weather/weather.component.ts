@@ -29,9 +29,7 @@ export class WeatherComponent {
     private processInformation(data: any): void {
         const informationDay = data.data;
 
-        // Zera as listas para evitar que tenha dados de outra cidade.
-        this.temperatureList = [];
-        this.dateList = [];
+        this.resetLists();
 
         informationDay.forEach((each: any) => {
             const tempMin = each.temperature.min;
@@ -42,5 +40,13 @@ export class WeatherComponent {
             this.dateList.push(each.date_br);
         });
         this.isVisible = true;
+    }
+
+    /**
+     * Zera as listas para evitar que tenha dados de outra cidade.
+     */
+    private resetLists(): void {
+        this.temperatureList = [];
+        this.dateList = [];
     }
 }

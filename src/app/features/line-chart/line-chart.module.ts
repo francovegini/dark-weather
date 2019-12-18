@@ -3,8 +3,8 @@ import { ChartModule } from 'angular-highcharts';
 import { LineChartComponent } from './line-chart.component';
 
 @NgModule({
-    declarations: [LineChartComponent],
     imports: [ChartModule],
+    declarations: [LineChartComponent],
     exports: [LineChartComponent]
 })
 export class LineChartModule {
